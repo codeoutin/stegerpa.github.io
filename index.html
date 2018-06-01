@@ -1,0 +1,116 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Time Calculator</title>
+  <meta name="author" content="Patrick Steger">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="css/time.css?v=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">TimeCal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Worktime <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Breaktime</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header" id="banner">
+            <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <h1>Worktime Calculator</h1>
+                <p class="lead">Calculate your minimum or desired worktime.</p>
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <div class="sponsor">
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIE23N&placement=bootswatchcom" id="_carbonads_js"></script>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="bs-docs-section">        
+            <div class="row">
+                <div class="col-lg-6">
+                <div class="bs-component">
+                    <form>
+                    <fieldset>
+                        <div class="form-group">
+                        <label for="arrivedInput">Arrived</label>
+                        <input type="text" class="flatpickr form-control" id="arrivedInput" aria-describedby="arrivedHelp" data-id="timePickerMinMaxHours">
+                        <small id="arrivedHelp" class="form-text text-muted">Pick the time you arrived at work.</small>
+                        </div>
+                        
+                        <fieldset class="form-group">
+                        <legend>When do you like to leave work today?</legend>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="leaveOptions" id="leaveOptionRegular" checked>
+                            Regular (7:36h + 0:45h breaktime)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="leaveOptions" id="leaveOptionPlus">
+                            Slight Plus (Regular + 20 Minutes)
+                            </label>
+                        </div>
+                        <div class="form-check disabled">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="leaveOptions" id="leaveOptionCustom"disabled>
+                            Custom Time
+                            </label>
+                        </div>
+                        </fieldset>
+                    </fieldset>
+                    </form>
+                </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    <h2>Leave work at</h2>
+                    <p class="leaveTime" id="leaveTime"></p>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@latest/dist/plugins/confirmDate/confirmDate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@latest/dist/plugins/weekSelect/weekSelect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@latest/dist/plugins/rangePlugin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@latest/dist/plugins/minMaxTimePlugin.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
