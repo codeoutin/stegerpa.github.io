@@ -13,12 +13,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="css/time.css?v=1.0">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
+  <script src="js/moment-with-locales.js"></script>
+  <script src="js/flatpickr.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -47,15 +45,10 @@
     <div class="container">
         <div class="page-header" id="banner">
             <div class="row">
-            <div class="col-lg-8 col-md-7 col-sm-6">
-                <h1>Worktime Calculator</h1>
-                <p class="lead">Calculate your minimum or desired worktime.</p>
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-6">
-                <div class="sponsor">
-                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIE23N&placement=bootswatchcom" id="_carbonads_js"></script>
+                <div class="col-lg-8 col-md-7 col-sm-6">
+                    <h1>Worktime Calculator</h1>
+                    <p class="lead">Calculate your minimum or desired worktime.</p>
                 </div>
-            </div>
             </div>
         </div>
 
@@ -88,9 +81,23 @@
                         </div>
                         <div class="form-check disabled">
                         <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="leaveOptions" id="leaveOptionCustom"disabled>
+                            <input type="radio" class="form-check-input" name="leaveOptions" id="leaveOptionCustom">
                             Custom Time
                             </label>
+                        </div>
+                        <div id="custom-time">
+                            <p>
+                                <div class="form-group">
+                                    <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <input type="number" id="customTime" class="form-control" min="1" max="240" value="1">
+                                        <div class="input-group-append">
+                                        <span class="input-group-text">minutes</span>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
                         </fieldset>
                     </fieldset>

@@ -22,7 +22,16 @@ for (var i = 0; i < examples.length; i++) {
 }
 
 $(document).ready(function() {
+    var customTimeDiv = document.getElementById('custom-time');
     $('input:radio[name=leaveOptions]').change(function() {
+        if (document.getElementById('leaveOptionCustom').checked) {
+            customTimeDiv.style.display = "block";
+        } else {
+            customTimeDiv.style.display = "none";
+        }
+        showLeaveTime(getTimeToAdd());
+    });
+    $('#customTime').on('input', function() {
         showLeaveTime(getTimeToAdd());
     });
 });
@@ -33,8 +42,9 @@ showLeaveTime(getTimeToAdd());
 function getTimeToAdd() {
     if (document.getElementById('leaveOptionPlus').checked) {
         return 20;
-    }
-    else {
+    } else if (document.getElementById('leaveOptionCustom').checked) {
+        return parseInt(document.getElementById('customTime').value);
+    } else {
         return 0;
     }
 }
